@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/potato.mk
+    $(LOCAL_DIR)/carbon_vince.mk

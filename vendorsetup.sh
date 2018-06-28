@@ -1,2 +1,3 @@
-add_lunch_combo potato_vince-userdebug
-
+add_lunch_combo carbon_vince-user
+add_lunch_combo carbon_vince-userdebug
+add_lunch_combo carbon_vince-eng
