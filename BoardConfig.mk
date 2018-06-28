@@ -48,9 +48,6 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/xiaomi/vince
 TARGET_KERNEL_CONFIG := vince_defconfig
 
-# Enable real time lockscreen charging current values
-BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
-
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
