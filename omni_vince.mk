@@ -25,6 +25,9 @@ $(call inherit-product, device/xiaomi/vince/device.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
+# CarrierConfig
+PRODUCT_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
+
 # Device identifier. This must come after all inclusions
 TARGET_VENDOR := Xiaomi
 PRODUCT_DEVICE := vince
