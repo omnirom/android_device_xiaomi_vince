@@ -31,11 +31,14 @@
 #include <sys/sysinfo.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+#include <android-base/logging.h>
 
-#include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
+
+namespace android {
+namespace init {
 
 char const *heapstartsize;
 char const *heapgrowthlimit;
@@ -146,4 +149,6 @@ void vendor_load_properties()
     property_set("ro.hwui.text_small_cache_height", "2048");
     property_set("ro.hwui.text_large_cache_width", "4096");
     property_set("ro.hwui.text_large_cache_height", large_cache_height);
+}
+}
 }
