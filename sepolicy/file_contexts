@@ -20,7 +20,7 @@
 
 # Data files
 /data/misc/netmgr/log\.txt			u:object_r:netmgrd_data_file:s0
-/data/time(/.*)?                         	u:object_r:time_data_file:s0
+/data/vendor/time(/.*)?                         	u:object_r:time_data_file:s0
 
 # Debugfs files
 /sys/kernel/debug/rmt_storage(/.*)?             u:object_r:debugfs_rmt:s0
