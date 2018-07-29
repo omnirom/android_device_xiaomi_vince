@@ -34,10 +34,8 @@ public class DeviceSettings extends PreferenceActivity implements
         Preference.OnPreferenceChangeListener {
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
-    private static final String KEY_SWAP_BACK_RECENTS = "swap_back_recents";
 
     private VibratorStrengthPreference mVibratorStrength;
-    private TwoStatePreference mSwapBackRecents;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,10 +48,6 @@ public class DeviceSettings extends PreferenceActivity implements
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
-
-        mSwapBackRecents = (TwoStatePreference) findPreference(KEY_SWAP_BACK_RECENTS);
-        mSwapBackRecents.setChecked(Settings.System.getInt(getContentResolver(),
-                    Settings.System.BUTTON_SWAP_BACK_RECENTS, 0) != 0);
     }
 
     @Override
@@ -66,16 +60,6 @@ public class DeviceSettings extends PreferenceActivity implements
             break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mSwapBackRecents) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.BUTTON_SWAP_BACK_RECENTS, mSwapBackRecents.isChecked() ? 1 : 0);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
