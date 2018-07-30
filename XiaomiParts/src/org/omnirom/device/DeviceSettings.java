@@ -29,11 +29,15 @@ import android.preference.TwoStatePreference;
 import android.provider.Settings;
 import android.view.MenuItem;
 import android.util.Log;
+import com.android.internal.util.omni.PackageUtils;
 
 public class DeviceSettings extends PreferenceActivity implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String KEY_CATEGORY_DISPLAY = "display";
     public static final String KEY_VIBSTRENGTH = "vib_strength";
+
+    final String KEY_DEVICE_DOZE = "device_doze";
 
     private VibratorStrengthPreference mVibratorStrength;
 
@@ -48,6 +52,11 @@ public class DeviceSettings extends PreferenceActivity implements
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
+         if (!PackageUtils.isAppInstalled(this, "org.lineageos.settings.doze")) {
+            PreferenceCategory displayCategory = (PreferenceCategory) findPreference(KEY_CATEGORY_DISPLAY);
+            displayCategory.removePreference(findPreference(KEY_DEVICE_DOZE));
+        }
+
     }
 
     @Override

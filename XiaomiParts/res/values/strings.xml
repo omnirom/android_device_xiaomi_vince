@@ -23,4 +23,6 @@
     <string name="buttons_title">Buttons</string>
     <string name="swap_back_recents_summary"></string>
     <string name="swap_back_recents_title">Swap back and recents button</string>
+    <string name="display_title">Display</string>
+    <string name="device_doze_title">Ambient display</string>
 </resources>

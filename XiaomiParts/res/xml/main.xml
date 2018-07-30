@@ -21,4 +21,17 @@
 	        android:title="@string/vib_strength_title_head"
 	        android:summary="@string/vib_strength_summary_head" />
 	</PreferenceCategory>
+
+        <PreferenceCategory
+        android:key="display"
+        android:title="@string/display_title">
+        <Preference
+            android:key="device_doze"
+            android:persistent="false"
+            android:title="@string/device_doze_title" >
+            <intent android:action="android.intent.action.MAIN"
+                 android:targetPackage="org.lineageos.settings.doze"
+                 android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity"/>
+        </Preference>
+    </PreferenceCategory>
 </PreferenceScreen>
